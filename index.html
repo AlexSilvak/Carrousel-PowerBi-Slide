@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Graficos</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <style>
+        button {
+            margin-left: 2%;
+            margin-top: 1%;
+            margin: 2%;
+            margin-bottom: 2%;
+
+        }
+    </style>
+</head>
+
+<body class="container">
+
+    <h1 class="text-center">Gráficos</h1>
+
+    <form class="form" onsubmit="graficoController.adicionar(event)">
+
+        <div class="form-group">
+            <label for="data">Data</label>
+            <input type="date" id="data" class="form-control" required autofocus />
+        </div>
+
+        <div class="form-group">
+            <label for="quantidade">E-mail</label>
+            <input type="email" id="email" class="form-control" placeholder="E-mail" required autofocus />
+        </div>
+
+        <div class="form-group">
+            <label for="grafico">Nome do Gráfico</label>
+            <input type="text" id="grafico" class="form-control" placeholder="Nome do Gráfico" required autofocus />
+        </div>
+
+        <div class="form-group">
+            <label for="url">Link incorporado</label>
+            <input id="url" type="text" class="form-control" placeholder="Link incorporado" required autofocus />
+        </div>
+        <!--Incluir Iframes dos gráficos-->
+        <div class="text-center">
+            <button class="btn btn-primary" type="submit">Incluir</button><button class="btn btn-primary"
+                type="submit">Alterar</button><button class="btn btn-primary" type="submit">Salvar</button>
+            <!--Alertas-->
+            <div class="alertaClass">
+                <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+
+                </svg>
+                <div class="alert alert-success d-flex align-items-center" role="alert" style="margin: 1%">
+                    <svg class="bi flex-shrink-0 me-2" width="1" height="1" style="margin-top:1%;" role="img"
+                        aria-label="Success:">
+                        <use xlink:href="#check-circle-fill" />
+                    </svg>
+                    <div class="alerta">
+                        Dados salvo com sucesso!
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+
+
+
+    <br>
+    <br>
+    <!--Lista de gráficos inclidos-->
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>DATA</th>
+                <th>E-MAIL</th>
+                <th>GRAFICO</th>
+                <th>URL</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        </tbody>
+
+        <tfoot>
+        </tfoot>
+    </table>
+    <script src="./js/controller/graficos.js"></script>
+    <script src="./js/controller/graficoController.js"></script>
+    <script>
+        let graficoController = new GraficoController();
+        let graficos=new Graficos()
+    </script>
+  
+
+</body>
+
+</html>
